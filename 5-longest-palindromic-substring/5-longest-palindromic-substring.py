@@ -2,7 +2,7 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         ans = ""
         c = 0
-        for c in range(len(s)):
+        while c in range(len(s)):
             e = c 
             while e < len(s) - 1:
                 if s[e + 1] == s[e]:
