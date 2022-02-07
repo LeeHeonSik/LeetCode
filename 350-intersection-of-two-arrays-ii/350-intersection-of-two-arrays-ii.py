@@ -1,14 +1,9 @@
 class Solution:
     def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        dic1 = Counter(nums1)
+        dic2 = Counter(nums2)
         ans = []
-        if len(nums1) >= len(nums2):
-            for i in nums2:
-                if i in nums1:
-                    ans.append(i)
-                    nums1.remove(i)
-        else:
-            for i in nums1:
-                if i in nums2:
-                    ans.append(i)
-                    nums2.remove(i)
+        for i, j in dic1.items():
+            if i in dic2.keys():
+                ans.extend([i]*min(dic1[i],dic2[i]))
         return ans
