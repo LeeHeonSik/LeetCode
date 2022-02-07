@@ -2,8 +2,6 @@ class Solution:
     def check(self, row, col, x : int, y : int, prev : list[list[int]], board : list[list[int]]):
         c = 0
             
-        
-        
         for i in range(3):
             for j in range(3):
                 if (0 <= x-1+j < row) and (0 <= y-1+i < col) and (prev[x-1+j][y-1+i]) == 1:
