@@ -2,11 +2,11 @@ class Solution:
     def increasingTriplet(self, nums: List[int]) -> bool:
         _max = 2147483647
         st = nums[0]
-        for i in nums[1::]:
-            if i > _max:
+        for i in range(1, len(nums)):
+            if nums[i]> _max:
                 return True
-            elif i > st:
-                _max = i
+            elif nums[i] > st:
+                _max = nums[i]
             else:
-                st = i
+                st = nums[i]
         return False
