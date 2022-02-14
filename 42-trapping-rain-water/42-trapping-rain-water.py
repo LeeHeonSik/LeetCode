@@ -3,7 +3,6 @@ class Solution:
         i, j = 0, len(height) - 1
         le, ri = height[i], height[j]
         ans = 0
-        
         while i < j:
             if le > ri:
                 j -= 1
