@@ -5,9 +5,10 @@ class Solution:
         
         for i in range(len(height)):
             ri = 0
-            le = max(le, height[i])
-            
-            if le != height[i]:
+            if le <= height[i]:
+                le = height[i]
+                
+            else:
                 ri = max(height[i::])
                 ans += min(le, ri) - height[i]
                 
