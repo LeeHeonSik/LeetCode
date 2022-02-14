@@ -2,9 +2,9 @@ class Solution:
     def trap(self, height: List[int]) -> int:
         ans = 0
         le = 0
+        ri = 0
         
         for i in range(len(height)):
-            ri = 0
             
             if le <= height[i]:
                 le = height[i]
