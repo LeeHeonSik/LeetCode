@@ -1,14 +1,20 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
-        ans = le = ri = 0
+        i, j = 0, len(height) - 1
+        le, ri = height[i], height[j]
+        ans = 0
         
-        for i in range(len(height)):
-            
-            if le <= height[i]:
-                le = height[i]
-                
+        while i < j:
+            if le > ri:
+                j -= 1
+                if height[j] > ri:
+                    ri = height[j]
+                else:
+                    ans += ri - height[j]
             else:
-                ri = max(height[i::])
-                ans += min(le, ri) - height[i]
-                
+                i += 1
+                if height[i] > le:
+                    le = height[i]
+                else:
+                    ans += le - height[i]
         return ans
