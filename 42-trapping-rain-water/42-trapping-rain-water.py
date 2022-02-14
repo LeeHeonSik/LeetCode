@@ -5,6 +5,7 @@ class Solution:
         
         for i in range(len(height)):
             ri = 0
+            
             if le <= height[i]:
                 le = height[i]
                 
