@@ -1,8 +1,6 @@
 class Solution:
     def trap(self, height: List[int]) -> int:
-        ans = 0
-        le = 0
-        ri = 0
+        ans = le = ri = 0
         
         for i in range(len(height)):
             
