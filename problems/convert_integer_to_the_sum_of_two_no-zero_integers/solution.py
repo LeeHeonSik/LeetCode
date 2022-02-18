@@ -1,9 +1,8 @@
 class Solution:
     def getNoZeroIntegers(self, n: int) -> List[int]:
-        for i in range(1,n):
-            if '0' in str(i):
-                continue
-            if '0' in str(n-i):
-                continue
-            ans=[i,n-i]
-            return ans
+        A = 1
+        while A < n:
+            if '0' not in str(A) + str(n-A):
+                break
+            A += 1
+        return [A,n-A]
