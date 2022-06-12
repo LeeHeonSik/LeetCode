@@ -8,5 +8,4 @@ class Solution:
             if i in primes:
                 c += 1
         
-        ans = factorial(n-c) * factorial(c) % modulo
-        return ans
+        return factorial(n-c) * factorial(c) % modulo
